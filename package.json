@@ -10,19 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gndx/js-portfolio.git"
+    "url": "git+https://github.com/Fernu292/web-pack-curso.git"
   },
   "keywords": [
     "javascript",
     "html",
     "css"
   ],
-  "author": "oscar barajas <oscar@gndx.dev>",
+  "author": "Luis Fernando <fernu292@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/gndx/js-portfolio/issues"
-  },
-  "homepage": "https://github.com/gndx/js-portfolio#readme",
   "devDependencies": {
     "@babel/core": "^7.16.5",
     "@babel/plugin-transform-runtime": "^7.16.5",
