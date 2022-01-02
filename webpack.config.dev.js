@@ -2,8 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
@@ -12,7 +10,9 @@ module.exports = {
     //Indica el punto de entrada de la app
     entry: './src/index.js',
     //Establece el punto de salida de nuestra app optimizada
-    mode: 'production',
+    mode: 'development',
+    //Agregando wathc para observar cambios en el proyecto
+    watch: true,
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[contenthash].js', 
@@ -91,14 +91,15 @@ module.exports = {
         }),
         new Dotenv(),
         new CleanWebpackPlugin(),
-
+        
     ],
-    //Optimizacion y minificacion
-    optimization : {
-        minimize: true,
-        minimizer: [
-            new CssMinimizerPlugin(),
-            new TerserPlugin(),
-        ]
-    }
+    devServer : {
+        static: {
+            directory: path.join(__dirname, 'dist/'),
+        },
+        compress: true,
+        port: 3000, 
+        open: true,
+    },
+   
 }
