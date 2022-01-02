@@ -1,0 +1,3 @@
+[build]
+    publish = "dist"
+    commant = "npm run build"
